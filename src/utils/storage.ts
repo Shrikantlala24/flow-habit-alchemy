@@ -1,4 +1,3 @@
-
 import { Task, UserStats, UserPreferences, AchievementType, Achievement } from '@/types';
 
 // Initial achievements
@@ -131,7 +130,7 @@ export const deleteTask = (taskId: string): void => {
 
 export const completeTask = (taskId: string): void => {
   const tasks = getTasks();
-  const taskIndex = tasks.findIndex(t => t.id === task.id);
+  const taskIndex = tasks.findIndex(t => t.id === taskId);
   
   if (taskIndex >= 0) {
     tasks[taskIndex].completed = true;
