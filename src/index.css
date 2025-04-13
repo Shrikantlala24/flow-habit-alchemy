@@ -5,65 +5,83 @@
 
 @layer base {
   :root {
-    --background: 260 25% 98%;
-    --foreground: 270 15% 15%;
+    --background: 60 30% 98%;
+    --foreground: 75 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 270 15% 15%;
+    --card-foreground: 75 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 270 15% 15%;
+    --popover-foreground: 75 15% 15%;
 
-    --primary: 260 75% 75%;
+    --primary: 70 80% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 260 20% 92%;
-    --secondary-foreground: 270 15% 15%;
+    --secondary: 60 60% 95%;
+    --secondary-foreground: 75 15% 15%;
 
-    --muted: 260 20% 92%;
-    --muted-foreground: 270 10% 50%;
+    --muted: 60 20% 92%;
+    --muted-foreground: 75 10% 50%;
 
-    --accent: 260 75% 90%;
-    --accent-foreground: 270 15% 15%;
+    --accent: 70 80% 90%;
+    --accent-foreground: 75 15% 15%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 260 15% 90%;
-    --input: 260 15% 90%;
-    --ring: 260 75% 75%;
+    --border: 60 15% 90%;
+    --input: 60 15% 90%;
+    --ring: 70 80% 50%;
 
     --radius: 0.75rem;
+
+    --sidebar-background: 60 30% 98%;
+    --sidebar-foreground: 75 15% 15%;
+    --sidebar-primary: 70 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 70 80% 90%;
+    --sidebar-accent-foreground: 75 15% 15%;
+    --sidebar-border: 60 15% 90%;
+    --sidebar-ring: 70 80% 50%;
   }
 
   .dark {
-    --background: 270 25% 10%;
-    --foreground: 260 15% 95%;
+    --background: 75 25% 10%;
+    --foreground: 60 15% 95%;
 
-    --card: 270 25% 12%;
-    --card-foreground: 260 15% 95%;
+    --card: 75 25% 12%;
+    --card-foreground: 60 15% 95%;
 
-    --popover: 270 25% 12%;
-    --popover-foreground: 260 15% 95%;
+    --popover: 75 25% 12%;
+    --popover-foreground: 60 15% 95%;
 
-    --primary: 260 75% 70%;
+    --primary: 70 70% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 20% 20%;
-    --secondary-foreground: 260 15% 95%;
+    --secondary: 75 20% 20%;
+    --secondary-foreground: 60 15% 95%;
 
-    --muted: 270 20% 20%;
-    --muted-foreground: 260 10% 70%;
+    --muted: 75 20% 20%;
+    --muted-foreground: 60 10% 70%;
 
-    --accent: 270 20% 25%;
-    --accent-foreground: 260 15% 95%;
+    --accent: 75 20% 25%;
+    --accent-foreground: 60 15% 95%;
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 20% 25%;
-    --input: 270 20% 25%;
-    --ring: 260 75% 70%;
+    --border: 75 20% 25%;
+    --input: 75 20% 25%;
+    --ring: 70 70% 45%;
+
+    --sidebar-background: 75 25% 12%;
+    --sidebar-foreground: 60 15% 95%;
+    --sidebar-primary: 70 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 75 20% 25%;
+    --sidebar-accent-foreground: 60 15% 95%;
+    --sidebar-border: 75 20% 25%;
+    --sidebar-ring: 70 70% 45%;
   }
 }
 
@@ -100,5 +118,17 @@
   
   .focus-timer-button {
     @apply rounded-full p-3 bg-primary text-white hover:bg-primary/90 transition-colors;
+  }
+
+  .success-gradient {
+    @apply bg-gradient-to-br from-[#F2FCE2] to-[#A3E635] dark:from-[#4D7C0F] dark:to-[#84CC16];
+  }
+  
+  .energy-gradient {
+    @apply bg-gradient-to-br from-[#FEF9C3] to-[#FACC15] dark:from-[#A16207] dark:to-[#EAB308];
+  }
+  
+  .growth-gradient-card {
+    @apply bg-gradient-to-br from-card to-secondary/80 shadow-md hover:shadow-lg transition-all;
   }
 }

@@ -63,26 +63,21 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for our app
-				purple: {
-					light: '#9b87f5',
-					DEFAULT: '#7E69AB',
-					dark: '#1A1F2C',
-				},
+				// Custom colors for success, energy and growth themes
 				success: {
 					light: '#F2FCE2',
-					DEFAULT: '#4CAF50',
-					dark: '#2E7D32',
+					DEFAULT: '#84CC16',
+					dark: '#4D7C0F',
 				},
-				warning: {
-					light: '#FFF8E1',
-					DEFAULT: '#FFA000',
-					dark: '#FF6F00',
+				energy: {
+					light: '#FEF9C3',
+					DEFAULT: '#FACC15',
+					dark: '#A16207',
 				},
-				info: {
-					light: '#E1F5FE',
-					DEFAULT: '#1EAEDB',
-					dark: '#0277BD',
+				growth: {
+					light: '#ECFCCB',
+					DEFAULT: '#BEF264',
+					dark: '#3F6212',
 				},
 			},
 			borderRadius: {
@@ -124,6 +119,11 @@ export default {
 				'scale-in': 'scale-in 0.2s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'celebrate': 'celebrate 0.5s ease-out'
+			},
+			backgroundImage: {
+				'success-gradient': 'linear-gradient(to bottom right, var(--success-light), var(--success))',
+				'energy-gradient': 'linear-gradient(to bottom right, var(--energy-light), var(--energy))',
+				'growth-gradient': 'linear-gradient(to bottom right, var(--growth-light), var(--growth))',
 			}
 		}
 	},
