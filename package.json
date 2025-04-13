@@ -1,11 +1,12 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "backend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "start": "node dist/index.js",
+    "dev": "npx ts-node src/index.ts",
+    "build": "tsc",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -40,13 +41,19 @@
     "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.4",
     "@tanstack/react-query": "^5.56.2",
+    "body-parser": "^1.20.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "cors": "^2.8.5",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.0.3",
     "embla-carousel-react": "^8.3.0",
+    "express": "^4.18.2",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.462.0",
+    "mongodb": "^6.15.0",
+    "mongoose": "^7.0.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
@@ -64,7 +71,9 @@
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
-    "@types/node": "^22.5.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.0.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
@@ -74,10 +83,24 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "lovable-tagger": "^1.1.7",
+    "nodemon": "^2.0.22",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.11",
-    "typescript": "^5.5.3",
+    "typescript": "^5.0.4",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
-  }
+  },
+  "description": "Transform the way you manage tasks with flow, fun, and focus.  \r Inspired by **HabitNow**, enhanced with **gamification psychology** and **flow state principles** 🧠🎯.",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shrikantlala24/flow-habit-alchemy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shrikantlala24/flow-habit-alchemy/issues"
+  },
+  "homepage": "https://github.com/Shrikantlala24/flow-habit-alchemy#readme"
 }

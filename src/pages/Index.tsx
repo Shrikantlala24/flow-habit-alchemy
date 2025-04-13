@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
@@ -10,6 +9,7 @@ import AchievementPanel from '@/components/AchievementPanel';
 import FocusTimer from '@/components/FocusTimer';
 import { Task, UserStats } from '@/types';
 import { getUserStats, getTasks, completeTask } from '@/utils/storage';
+import { getHabits, addHabit, deleteHabit } from "../api/habits";
 
 const Index = () => {
   const { toast } = useToast();
@@ -17,7 +17,28 @@ const Index = () => {
   const [showFocusTimer, setShowFocusTimer] = useState(false);
   const [focusTask, setFocusTask] = useState<Task | undefined>(undefined);
   const [showAchievements, setShowAchievements] = useState(false);
-  
+  const [habits, setHabits] = useState<{ id: string; name: string; description?: string }[]>([]);
+  const [newHabit, setNewHabit] = useState("");
+
+  useEffect(() => {
+    const fetchHabits = async () => {
+      const data = await getHabits();
+      setHabits(data);
+    };
+    fetchHabits();
+  }, []);
+
+  const handleAddHabit = async () => {
+    const habit = await addHabit({ name: newHabit });
+    setHabits([...habits, habit]);
+    setNewHabit("");
+  };
+
+  const handleDeleteHabit = async (id: string) => {
+    await deleteHabit(id);
+    setHabits(habits.filter((habit) => habit.id !== id));
+  };
+
   // Update user stats
   const refreshStats = () => {
     setUserStats(getUserStats());
@@ -154,6 +175,24 @@ const Index = () => {
           </div>
         )}
       </main>
+
+      <div>
+        <h1>Habits</h1>
+        <input
+          type="text"
+          value={newHabit}
+          onChange={(e) => setNewHabit(e.target.value)}
+          placeholder="New habit"
+        />
+        <button onClick={handleAddHabit}>Add Habit</button>
+        <ul>
+          {habits.map((habit) => (
+            <li key={habit.id}>
+              {habit.name} <button onClick={() => handleDeleteHabit(habit.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

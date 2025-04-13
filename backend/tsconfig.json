@@ -1,0 +1,12 @@
+// Disable schema validation
+{
+  "$schema": "./tsconfig.json", // Uncomment and provide a local schema file if needed
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
